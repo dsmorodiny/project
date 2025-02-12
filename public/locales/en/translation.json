@@ -14,5 +14,7 @@
   "Короткий язык": "En",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Consectetur eaque eius eligendi eum molestias, mollitia nihil provident ratione similique sunt suscipit unde vero! Consequuntur culpa deserunt id pariatur rem voluptates": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur eaque eius eligendi eum molestias, mollitia nihil provident ratione similique sunt suscipit unde vero! Consequuntur culpa deserunt id pariatur rem voluptates"
-  }
+  },
+  "increment": "increment",
+  "decrement": "decrement"
 }
