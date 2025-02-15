@@ -1,9 +1,8 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { tsxRegex } from 'ts-loader/dist/constants';
 import { getCounter } from './getCounter';
 
-describe('getCounter()', () => {
+describe('getCounter', () => {
     test('should return counter value', () => {
         const state: DeepPartial<StateSchema> = {
             counter: { value: 10 },

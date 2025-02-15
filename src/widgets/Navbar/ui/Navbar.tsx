@@ -26,16 +26,10 @@ export const Navbar = ({ className }: NavbarProps) => {
             >
                 {t('Войти')}
             </Button>
-            <Modal
-                isOpen={isAuthModal}
-                onClose={onToggleModal}
-
-            >
-
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
                 {/* eslint-disable-next-line */}
-                {t("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur eaque eius eligendi eum molestias, mollitia nihil provident ratione similique sunt suscipit unde vero! Consequuntur culpa deserunt id pariatur rem voluptates")}
+                {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.')}
             </Modal>
         </div>
-
     );
 };
