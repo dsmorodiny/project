@@ -9,7 +9,6 @@ import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
-
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
@@ -53,10 +52,12 @@ export const Navbar = ({ className }: NavbarProps) => {
             >
                 {t('Войти')}
             </Button>
-            <LoginModal
-                isOpen={isAuthModal}
-                onClose={onCloseModal}
-            />
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
+            )}
         </div>
     );
 };
