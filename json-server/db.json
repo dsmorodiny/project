@@ -23,7 +23,21 @@
       "id": "1",
       "username": "admin",
       "password": "123"
+    },
+    {
+      "id": "af9c",
+      "username": "admin",
+      "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "Андрей",
+    "lastname": "Родионов",
+    "age": "30",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Fryaz",
+    "username": "admin",
+    "avatar": "https://i.pinimg.com/originals/20/4a/c0/204ac0af52e2d63403b769f51e210f7f.jpg"
+  }
 }
