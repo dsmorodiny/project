@@ -613,6 +613,12 @@
       "userId": "1",
       "text": "sdfsdf",
       "id": "yYEdTI-"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "123213",
+      "id": "TR1yDY6"
     }
   ],
   "users": [
@@ -634,9 +640,9 @@
   "profile": [
     {
       "id": "1",
-      "first": "jghwer",
-      "lastname": "asfewr",
-      "age": 465,
+      "first": "Andrei",
+      "lastname": "Rodionov",
+      "age": 30,
       "currency": "RUB",
       "country": "Belarus",
       "city": "Moscow",
