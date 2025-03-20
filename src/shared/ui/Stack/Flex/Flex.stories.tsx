@@ -1,5 +1,6 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { Flex } from './Flex';
 
 export default {
@@ -17,7 +18,44 @@ Row.args = {
     children: (
         <>
             <div>first</div>
-            <div>second</div>
+            <div>first</div>
+            <div>first</div>
+            <div>first</div>
+        </>
+    ),
+};
+
+export const RowGap4 = Template.bind({});
+RowGap4.args = {
+    gap: '4',
+    children: (
+        <>
+            <div>first</div>
+            <div>first</div>
+            <div>first</div>
+            <div>first</div>
+        </>
+    ),
+};
+export const RowGap8 = Template.bind({});
+RowGap8.args = {
+    gap: '8',
+    children: (
+        <>
+            <div>first</div>
+            <div>first</div>
+            <div>first</div>
+            <div>first</div>
+        </>
+    ),
+};
+
+export const RowGap16 = Template.bind({});
+RowGap16.args = {
+    gap: '16',
+    children: (
+        <>
+            <div>first</div>
             <div>first</div>
             <div>first</div>
             <div>first</div>
@@ -31,7 +69,6 @@ Column.args = {
     children: (
         <>
             <div>first</div>
-            <div>second</div>
             <div>first</div>
             <div>first</div>
             <div>first</div>
@@ -39,70 +76,27 @@ Column.args = {
     ),
 };
 
-export const rowGap4 = Template.bind({});
-rowGap4.args = {
-    gap: '4',
-    children: (
-        <>
-            <div>first</div>
-            <div>second</div>
-            <div>first</div>
-            <div>first</div>
-            <div>first</div>
-        </>
-    ),
-};
-
-export const rowGap8 = Template.bind({});
-rowGap8.args = {
-    gap: '8',
-    children: (
-        <>
-            <div>first</div>
-            <div>second</div>
-            <div>first</div>
-            <div>first</div>
-            <div>first</div>
-        </>
-    ),
-};
-
-export const rowGap16 = Template.bind({});
-rowGap16.args = {
-    gap: '16',
-    children: (
-        <>
-            <div>first</div>
-            <div>second</div>
-            <div>first</div>
-            <div>first</div>
-            <div>first</div>
-        </>
-    ),
-};
-
-export const rowGap32 = Template.bind({});
-rowGap32.args = {
-    gap: '32',
-    children: (
-        <>
-            <div>first</div>
-            <div>second</div>
-            <div>first</div>
-            <div>first</div>
-            <div>first</div>
-        </>
-    ),
-};
-
-export const columnGap16 = Template.bind({});
-columnGap16.args = {
+export const ColumnGap16 = Template.bind({});
+ColumnGap16.args = {
     gap: '16',
     direction: 'column',
     children: (
         <>
             <div>first</div>
-            <div>second</div>
+            <div>first</div>
+            <div>first</div>
+            <div>first</div>
+        </>
+    ),
+};
+
+export const ColumnAlignEnd = Template.bind({});
+ColumnAlignEnd.args = {
+    direction: 'column',
+    align: 'end',
+    children: (
+        <>
+            <div>first</div>
             <div>first</div>
             <div>first</div>
             <div>first</div>
