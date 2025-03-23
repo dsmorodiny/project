@@ -1,0 +1,14 @@
+.profileIcon {
+  fill: var(--inverted-primary-color);
+  transition: opacity 0.1s;
+
+}
+.profileIcon:hover {
+  opacity: 0.8;
+
+}
+
+.profileIcon:active {
+  opacity: 0.4;
+
+}
