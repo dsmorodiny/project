@@ -1,20 +1,19 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-
+import { memo } from 'react';
 import { VStack } from 'shared/ui/Stack';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { useNotifications } from '../../api/notificationApi';
 import cls from './NotificationList.module.scss';
-import { NotificationItem } from '../Notificationitem/NotificationItem';
+import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 interface NotificationListProps {
     className?: string;
-
 }
 
-export const NotificationList = (props: NotificationListProps) => {
+export const NotificationList = memo((props: NotificationListProps) => {
     const { className } = props;
     const { data, isLoading } = useNotifications(null, {
-        pollingInterval: 5000,
+        pollingInterval: 10000,
     });
 
     if (isLoading) {
@@ -37,9 +36,9 @@ export const NotificationList = (props: NotificationListProps) => {
             max
             className={classNames(cls.NotificationList, {}, [className])}
         >
-            {data?.map(((item) => (
+            {data?.map((item) => (
                 <NotificationItem key={item.id} item={item} />
-            )))}
+            ))}
         </VStack>
     );
-};
+});
