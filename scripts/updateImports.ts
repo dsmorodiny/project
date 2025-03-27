@@ -14,12 +14,13 @@ function isAbsolute(value: string) {
 
 files.forEach((sourceFile) => {
     const importDeclarations = sourceFile.getImportDeclarations();
-    importDeclarations.forEach((importDeclarations) => {
-        const value = importDeclarations.getModuleSpecifierValue();
+    importDeclarations.forEach((importDeclaration) => {
+        const value = importDeclaration.getModuleSpecifierValue();
 
         if (isAbsolute(value)) {
-            importDeclarations.setModuleSpecifier(`@/${value}`);
+            importDeclaration.setModuleSpecifier(`@/${value}`);
         }
     });
 });
+
 project.save();

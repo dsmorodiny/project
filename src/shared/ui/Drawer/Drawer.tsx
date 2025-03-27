@@ -110,7 +110,6 @@ export const Drawer = (props: DrawerProps) => {
     return (
         <AnimationProvider>
             <DrawerAsync {...props} />
-            ;
         </AnimationProvider>
     );
 };
