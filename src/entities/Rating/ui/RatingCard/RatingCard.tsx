@@ -1,9 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { classNames } from '@/shared/lib/classNames/classNames';
-
-import cls from './RatingCard.module.scss';
 import { Card } from '@/shared/ui/Card/Card';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text/Text';
@@ -20,22 +17,23 @@ interface RatingCardProps {
     hasFeedback?: boolean;
     onCancel?: (starsCount: number) => void;
     onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?: number;
 }
 
-export const RatingCard = (props: RatingCardProps) => {
+export const RatingCard = memo((props: RatingCardProps) => {
     const {
         className,
         onAccept,
-        onCancel,
         feedbackTitle,
         hasFeedback,
+        onCancel,
         title,
+        rate = 0,
     } = props;
     const { t } = useTranslation();
-
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
-    const [feedback, setIsFeedback] = useState('');
+    const [starsCount, setStarsCount] = useState(rate);
+    const [feedback, setFeedback] = useState('');
 
     const onSelectStars = useCallback((selectedStarsCount: number) => {
         setStarsCount(selectedStarsCount);
@@ -58,19 +56,23 @@ export const RatingCard = (props: RatingCardProps) => {
 
     const modalContent = (
         <>
-            <Text title={feedbackTitle} />
-            <Input value={feedback} onChange={setIsFeedback} placeholder={t('Ваш отзыв')} />
+            <Text
+                title={feedbackTitle}
+            />
+            <Input
+                value={feedback}
+                onChange={setFeedback}
+                placeholder={t('Ваш отзыв')}
+            />
         </>
-
     );
 
     return (
-        <Card className={classNames(cls.RatingCard, {}, [className])}>
-            <VStack align="center" gap="8">
-                <Text title={title} />
-                <StarRating size={40} onSelect={onSelectStars} />
+        <Card className={className} max>
+            <VStack align="center" gap="8" max>
+                <Text title={starsCount ? t('Спасибо за оценку!') : title} />
+                <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
             </VStack>
-
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
                     <VStack max gap="32">
@@ -94,9 +96,8 @@ export const RatingCard = (props: RatingCardProps) => {
                             {t('Отправить')}
                         </Button>
                     </VStack>
-
                 </Drawer>
             </MobileView>
         </Card>
     );
-};
+});

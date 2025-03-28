@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
+
 import { RatingCard } from './RatingCard';
 
 export default {
-    title: 'shared/Rating',
+    title: 'shared/RatingCard',
     component: RatingCard,
     argTypes: {
         backgroundColor: { control: 'color' },
