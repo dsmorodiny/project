@@ -7,14 +7,14 @@ import { useCounterValue } from '../model/selectors/getCounterValue/getCounterVa
 export const Counter = () => {
     const dispatch = useDispatch();
     const counterValue = useCounterValue();
-    const { add, decrement, increment } = useCounterActions();
     const { t } = useTranslation();
+    const { decrement, increment, add } = useCounterActions();
 
-    const handleIncrement = () => {
+    const handleInc = () => {
         increment();
     };
 
-    const handleDecrement = () => {
+    const handleDec = () => {
         decrement();
     };
 
@@ -26,19 +26,22 @@ export const Counter = () => {
         <div>
             <h1 data-testid="value-title">{counterValue}</h1>
             <Button
-                onClick={handleIncrement}
+                onClick={handleAddFive}
+                data-testid="increment-btn5"
+            >
+                {t('add5')}
+            </Button>
+            <Button
+                onClick={handleInc}
                 data-testid="increment-btn"
             >
                 {t('increment')}
             </Button>
             <Button
                 data-testid="decrement-btn"
-                onClick={handleDecrement}
+                onClick={handleDec}
             >
                 {t('decrement')}
-            </Button>
-            <Button onClick={handleAddFive}>
-                {t('add')}
             </Button>
         </div>
     );

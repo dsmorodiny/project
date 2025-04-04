@@ -3,7 +3,7 @@ defaults
 not IE 11
 
 
-[delepoment]
+[development]
 last 2 Chrome versions
 last 2 Firefox versions
-last 1 Safari versions
+last 1 Safari version

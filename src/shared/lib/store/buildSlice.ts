@@ -20,6 +20,5 @@ export function buildSlice<
     return {
         ...slice,
         useActions,
-
     };
 }

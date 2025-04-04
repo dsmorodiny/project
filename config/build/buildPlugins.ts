@@ -1,11 +1,11 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CopyPlugin from 'copy-webpack-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({
@@ -18,13 +18,11 @@ export function buildPlugins({
             template: paths.html,
         }),
         new webpack.ProgressPlugin(),
-
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
         }),
-
         new CircularDependencyPlugin({
             exclude: /node_modules/,
             failOnError: true,
